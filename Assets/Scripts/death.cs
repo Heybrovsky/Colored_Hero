@@ -1,30 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class death : MonoBehaviour
 {
-    public bool trawa;
     GameObject Player;
-    // Start is called before the first frame update
     private void Start()
     {
         Player = GameObject.FindWithTag("Player");
     }
 
-    void OnCollisionStay2D(Collision2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
-        trawa = true;
+        Debug.Log("tRIGGERED");
+        if (other.tag == "Player")
+        {
+            Destroy(Player);
+        }
 
     }
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D()
     {
-    
+        Debug.Log("tRIGGERE111");
+
+
     }
 
-    void gettingSmashed()
-    {
-        Destroy(GameObject.FindWithTag("Player"));
-    }
 }

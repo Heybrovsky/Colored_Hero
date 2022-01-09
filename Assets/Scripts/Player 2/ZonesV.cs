@@ -60,7 +60,7 @@ public class ZonesV : MonoBehaviour
             }
             else if (Player2.name == "blue2" || Player2.name == "green2")
             {
-                Destroy(GameObject.FindWithTag("Player2"));
+                Destroy(Player2);
                 isColorRed2 = false;
             }
         }
@@ -77,7 +77,7 @@ public class ZonesV : MonoBehaviour
             }
             else if (Player2.name == "red2" || Player2.name == "blue2")
             {
-                Destroy(GameObject.FindWithTag("Player2"));
+                Destroy(Player2);
                 isColorGreen2 = false;
             }
         }
@@ -94,7 +94,7 @@ public class ZonesV : MonoBehaviour
             }
             else if (Player2.name == "red2" || Player2.name == "green2")
             {
-                Destroy(GameObject.FindWithTag("Player2"));
+                Destroy(Player2);
                 isColorBlue2 = false;
             }
         }

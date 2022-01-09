@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
     private bool facingRight;
     [SerializeField]
     private float movementSpeed;
@@ -13,7 +11,7 @@ public class Movement : MonoBehaviour
     public Animator animator;
 
 
-    [SerializeField]
+    [Range(1, 100)]
     public float jumpVelocity;
     public float groundedSkin = 0.0f;
     public LayerMask mask;
@@ -35,8 +33,6 @@ public class Movement : MonoBehaviour
         jumpCounter = 1;
     }
 
-
-
     private void Update()
     {
         RaycastHit2D hit01 = Physics2D.Raycast(
@@ -49,7 +45,8 @@ public class Movement : MonoBehaviour
         if (canMultipleJump)
         {
             multipleJump();
-        } else
+        }
+        else
         {
             singleJump();
         }
@@ -57,7 +54,7 @@ public class Movement : MonoBehaviour
         if (grounded == true)
         {
             animator.SetBool("IsJumping", false);
-            
+
 
         }
         else if (grounded == false)
@@ -66,15 +63,14 @@ public class Movement : MonoBehaviour
         }
     }
 
-
-
-    void singleJump() {
+    void singleJump()
+    {
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
-           
+
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
-            
+
         }
     }
 
@@ -82,11 +78,9 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            
+
             if (jumpCounter < maxJumps)
             {
-                fallMultiplier = 6f;
-                lowJumpMultiplier = 6f;
                 GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
                 jumpCounter++;
             }
@@ -98,30 +92,16 @@ public class Movement : MonoBehaviour
             jumpCounter = 1;
 
         }
-                transform.position += transform.right * movementSpeed * Time.deltaTime;
-
 
     }
 
-   
+
 
     private void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
-        if (rb.velocity.y < 0)
-        {
-            rb.gravityScale = fallMultiplier;
 
-        }
-        else if (rb.velocity.y > 0 && !Input.GetButtonDown("Jump"))
-        {
-            rb.gravityScale = lowJumpMultiplier;
-        }
-        else
-        {
-            rb.gravityScale = 1f;
-        }
-        //andleMovement(horizontal);
+        HandleMovement(horizontal);
 
         /*   Vector3 characterScale = transofrm.localScale;
            if(input.GetAxis("Horizontal") > 0)
@@ -130,16 +110,16 @@ public class Movement : MonoBehaviour
            }
            transform.localScale = characterScale;
            */
-        //lip(horizontal);
+        Flip(horizontal);
 
     }
-    /*
+
     void HandleMovement(float horizontal)
     {
 
-         rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
-    }*/
+    }
 
     private void Flip(float horizontal)
     {
