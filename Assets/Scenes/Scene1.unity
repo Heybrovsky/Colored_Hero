@@ -1176,7 +1176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player2: {fileID: 1484983899}
-  ball: {fileID: 470310257}
+  ball: {fileID: 1984443100}
   isRedLand2: 0
   isGreenLand2: 0
   isBlueLand2: 0
@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 768171800}
-  ball: {fileID: 470310257}
+  ball: {fileID: 2108153432}
   isRedLand: 1
   isGreenLand: 0
   isBlueLand: 0
@@ -1494,9 +1494,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9316a986aae98024190a6ccd8552823e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   dashCooldown: 1
   MaxDashSpeed: 5
-  dashSpeed: 500
+  dashSpeed: 4000
 --- !u!114 &768171803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,6 +1524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98dfbbfdc8585264f94ec142a1fb86e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  facingRight: 0
   movementSpeed: 15
   animator: {fileID: 768171809}
   jumpVelocity: 15
@@ -1533,6 +1535,9 @@ MonoBehaviour:
   groundCheckObject: {fileID: 1643186284}
   canMultipleJump: 1
   maxJumps: 2
+  dashCooldown: 1
+  MaxDashSpeed: 5
+  dashSpeed: 10
 --- !u!50 &768171805
 Rigidbody2D:
   serializedVersion: 4
@@ -2861,7 +2866,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484983899}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bf4351d1161a504ca984eefb53e27ea, type: 3}
   m_Name: 
@@ -3291,7 +3296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1632118399}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 78.7, y: -59.8, z: 0}
+  m_LocalPosition: {x: -3.6, y: -11.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2072178791}

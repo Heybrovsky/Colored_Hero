@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    private bool facingRight;
+    public bool facingRight;
     [SerializeField]
     private float movementSpeed;
     Rigidbody2D rb;
@@ -22,6 +22,14 @@ public class Movement : MonoBehaviour
     public bool canMultipleJump = false;
     private int jumpCounter = 0;
     public int maxJumps = 0;
+
+    public float dashCooldown = 1f; //How long the player has to wait before they can dash again
+
+    private float lastDash = 0f; //Amount of time since we last dashed
+
+    public float MaxDashSpeed = 5f;
+
+    public float dashSpeed = 500;
 
 
 
@@ -109,8 +117,10 @@ public class Movement : MonoBehaviour
                characterScale.x = 10;
            }
            transform.localScale = characterScale;
+
            */
         Flip(horizontal);
+        checkDash();
 
     }
 
@@ -132,6 +142,30 @@ public class Movement : MonoBehaviour
             theScale.x *= -1;
 
             transform.localScale = theScale;
+        }
+    }
+
+    private void checkDash()
+    {
+        lastDash += Time.deltaTime;
+        
+        if (lastDash >= dashCooldown && Input.GetKeyDown(KeyCode.F))
+        {
+            lastDash = 0f;
+            float dashDirection = Input.GetAxis("Horizontal");
+            GetComponent<Rigidbody2D>().velocity = new Vector2(MaxDashSpeed * dashDirection, GetComponent<Rigidbody2D>().velocity.y);
+         
+            if (facingRight == false)
+            {
+                Debug.Log("left");
+               
+                rb.AddForce(transform.position += Vector3.left * dashSpeed);
+            }else if (facingRight != false)
+            {
+                Debug.Log("Right");
+               
+                rb.AddForce(transform.position += Vector3.right * dashSpeed);
+            }
         }
     }
 }
