@@ -13,13 +13,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1203633982259589048, guid: 17682228677bff74e9316931c0f50d13, type: 3}
-  ball: {fileID: 1355740740745249120, guid: ded2b2703fa219f40be4b03315def38b, type: 3}
+  ball: {fileID: 1355740739963625572}
   isRedLand: 0
   isGreenLand: 0
   isBlueLand: 0
-  isColorRed: 0
-  isColorGreen: 0
-  isColorBlue: 0
 --- !u!1001 &5678880908817718439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27,6 +24,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5678880907921210895, guid: 26ace1234b0827c46bd7c6417694995e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.45787376
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678880907921210895, guid: 26ace1234b0827c46bd7c6417694995e,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.08425248
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678880907921210895, guid: 26ace1234b0827c46bd7c6417694995e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.002793476
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678880907921210895, guid: 26ace1234b0827c46bd7c6417694995e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.8715236
+      objectReference: {fileID: 0}
     - target: {fileID: 6638304873378389445, guid: 26ace1234b0827c46bd7c6417694995e,
         type: 3}
       propertyPath: m_LocalPosition.x

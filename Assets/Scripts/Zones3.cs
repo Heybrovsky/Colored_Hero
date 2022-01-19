@@ -13,9 +13,6 @@ public class Zones3 : MonoBehaviour
     public bool isBlueLand;
 
 
-    public bool isColorRed;
-    public bool isColorGreen;
-    public bool isColorBlue;
 
     private void Start()
     {
