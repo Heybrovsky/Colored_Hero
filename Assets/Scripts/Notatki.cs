@@ -24,11 +24,8 @@ public class Notatki : MonoBehaviour
      Zones2 - Poprawny kolor - przejście bez śmierci dla P2- disco
      ZonesC - Poprawny kolor - przejście bez śmierci dla P1
      ZonesV - Poprawny kolor - przejście bez śmierci dla P2
-     Zones3 - Przeciwny kolor - blok stały dla P1            -
-     Zones4 - Przeciwny kolor - blok stały dla P2            -
-     Zones5 - Poprawny kolor - przejście przez blok dla P1  -
-     Zones6 - Poprawny kolor - przejście przez blok dla P2  -
-     
+     Zones3 - Poprawny kolor - blok stały dla P1            -
+     Zones4 - Poprawny kolor - blok stały dla P2  
      
      
      

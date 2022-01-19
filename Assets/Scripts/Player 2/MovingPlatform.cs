@@ -13,19 +13,28 @@ public class MovingPlatform : MonoBehaviour
     private Transform childTransform;
     [SerializeField]
     private Transform transformB;
+  
 
+   
+ 
 
     void Start()
     {
+
         posB = transformB.localPosition;
         posA = childTransform.localPosition;
         nextPos = posB;
 
     }
 
-    // Update is called once per frame
+
+
+
+    
+
     void Update()
     {
+   
         Move();
     }
 

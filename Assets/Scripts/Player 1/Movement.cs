@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     Rigidbody2D rb;
     public Animator animator;
 
+    public ParticleSystem dust;
 
     [Range(1, 100)]
     public float jumpVelocity;
@@ -76,7 +77,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
-
+            CreateDust();
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
 
         }
@@ -86,11 +87,13 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-
+            
             if (jumpCounter < maxJumps)
             {
+                CreateDust();
                 GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
                 jumpCounter++;
+                
             }
         }
 
@@ -104,10 +107,24 @@ public class Movement : MonoBehaviour
     }
 
 
-
+    void CreateDust()
+    {
+        dust.Play();
+    }
     private void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
+        
+
+        if(horizontal == 0)
+        {
+            Debug.Log("works");
+           
+        }
+        else
+        {
+           
+        }
 
         HandleMovement(horizontal);
 
@@ -126,15 +143,17 @@ public class Movement : MonoBehaviour
 
     void HandleMovement(float horizontal)
     {
-
+      
         rb.velocity = new Vector2(horizontal * movementSpeed, rb.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
+        
     }
 
-    private void Flip(float horizontal)
+     void Flip(float horizontal)
     {
         if (horizontal > 0 && !facingRight || horizontal < 0 && facingRight)
         {
+            
             facingRight = !facingRight;
 
             Vector3 theScale = transform.localScale;
@@ -142,6 +161,12 @@ public class Movement : MonoBehaviour
             theScale.x *= -1;
 
             transform.localScale = theScale;
+            
+            if(grounded == true)
+            {
+                CreateDust();
+            }
+
         }
     }
 
@@ -166,6 +191,9 @@ public class Movement : MonoBehaviour
                
                 rb.AddForce(transform.position += Vector3.right * dashSpeed);
             }
+            
         }
     }
+
+
 }

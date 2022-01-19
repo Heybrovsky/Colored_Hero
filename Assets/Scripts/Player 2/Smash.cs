@@ -8,6 +8,8 @@ public class Smash : MonoBehaviour
     private Vector3 posB;
     private Vector3 nextPos;
     [SerializeField]
+    public float speedUp;
+    public float speedDown;
     private float speed;
     [SerializeField]
     private Transform childTransform;
@@ -24,31 +26,40 @@ public class Smash : MonoBehaviour
     }
  
 
-        // Update is called once per frame
+
         void Update()
     {
+        ChangeSpeed();
         Move();
     }
 
     private void Move()
     {
-        childTransform.localPosition = Vector3.MoveTowards(childTransform.localPosition, nextPos, speed * Time.deltaTime);
 
-        if(Vector3.Distance(childTransform.localPosition,nextPos)<= 0.1)
+        childTransform.localPosition = Vector3.MoveTowards(childTransform.localPosition, nextPos, speed * Time.deltaTime);
+        if (Vector3.Distance(childTransform.localPosition, nextPos) <= 0.1)
         {
+           
             ChangeDestination();
         }
+
+
     }
 
     private void ChangeDestination()
     {
         nextPos = nextPos != posA ? posA : posB;
-        if(nextPos == posB)
+    }
+
+    private void ChangeSpeed()
+    {
+        if (nextPos == posB)
         {
-            speed = 10;
-        }else if(nextPos == posA)
+            speed = speedDown;
+        }
+        else if (nextPos == posA)
         {
-            speed = 2;
+            speed = speedUp;
         }
     }
 

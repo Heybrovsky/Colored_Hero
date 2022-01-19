@@ -52,14 +52,14 @@ public class Zones3 : MonoBehaviour
             if (Player.name == "red")
             {
 
-                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), true);
+                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), false);
 
 
 
             }
             else if (Player.name == "blue" || Player.name == "green")
             {
-                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), false);
+                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), true);
             }
         }
 
@@ -71,13 +71,13 @@ public class Zones3 : MonoBehaviour
             if (Player.name == "green")
             {
 
-                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), true);
+                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), false);
 
 
             }
             else if (Player.name == "red" || Player.name == "blue")
             {
-                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), false);
+                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), true);
             }
         }
 
@@ -89,13 +89,13 @@ public class Zones3 : MonoBehaviour
             if (Player.name == "blue")
             {
 
-                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), true);
+                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), false);
 
 
             }
             else if (Player.name == "red" || Player.name == "green")
             {
-                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), false);
+                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), Player.GetComponent<Collider2D>(), true);
             }
         }
         else if (!isRedLand && !isGreenLand && !isBlueLand)
