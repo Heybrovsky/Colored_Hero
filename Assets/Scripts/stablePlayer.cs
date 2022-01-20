@@ -2,7 +2,7 @@
 
 public class stablePlayer : MonoBehaviour
 {
-    public GameObject player = GameObject.FindGameObjectWithTag("Player");
+ 
 
 
 
