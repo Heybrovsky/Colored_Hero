@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class ZonesC : MonoBehaviour
@@ -57,9 +58,9 @@ public class ZonesC : MonoBehaviour
 
 
             }
-            else if (Player.name == "blue" || Player.name == "green")
+            else if (Player.name == "blue" || Player.name == "green" || Player.name == "Player")
             {
-                Destroy(GameObject.FindWithTag("Player"));
+                SceneManager.LoadScene("Level1");
                 isColorRed = false;
             }
         }
@@ -74,9 +75,9 @@ public class ZonesC : MonoBehaviour
 
 
             }
-            else if (Player.name == "red" || Player.name == "blue")
+            else if (Player.name == "red" || Player.name == "blue" || Player.name == "Player")
             {
-                Destroy(GameObject.FindWithTag("Player"));
+                SceneManager.LoadScene("Level1");
                 isColorGreen = false;
             }
         }
@@ -91,9 +92,9 @@ public class ZonesC : MonoBehaviour
 
 
             }
-            else if (Player.name == "red" || Player.name == "green")
+            else if (Player.name == "red" || Player.name == "green" || Player.name == "Player")
             {
-                Destroy(GameObject.FindWithTag("Player"));
+                SceneManager.LoadScene("Level1");
                 isColorBlue = false;
             }
         }

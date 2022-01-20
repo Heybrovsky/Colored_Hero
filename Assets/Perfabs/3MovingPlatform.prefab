@@ -44,6 +44,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.8715236
       objectReference: {fileID: 0}
+    - target: {fileID: 6638304872143617246, guid: 26ace1234b0827c46bd7c6417694995e,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6638304873378389445, guid: 26ace1234b0827c46bd7c6417694995e,
         type: 3}
       propertyPath: m_LocalPosition.x

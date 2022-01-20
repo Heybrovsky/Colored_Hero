@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class death : MonoBehaviour
 {
     GameObject Player;
@@ -13,7 +13,7 @@ public class death : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            Destroy(Player);
+            SceneManager.LoadScene("Level1");
         }
 
     }
