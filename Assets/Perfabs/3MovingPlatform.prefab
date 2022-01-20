@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 6638304873378389447, guid: 26ace1234b0827c46bd7c6417694995e,
         type: 3}
       propertyPath: m_Name
-      value: MovingPlatform
+      value: 3MovingPlatform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26ace1234b0827c46bd7c6417694995e, type: 3}
