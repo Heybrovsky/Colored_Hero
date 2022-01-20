@@ -1,8 +1,5 @@
 # Colored-Hero
 
-![gif](Docs/1.gif)
-
-![gif](Docs/2.gif)
 
 ![1](Docs/Screenshot_1.png)
 
