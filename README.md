@@ -1,8 +1,8 @@
 # Colored-Hero
 
-![mp4](Docs/1.mp4)
+![gif](Docs/1.gif)
 
-![mp4](Docs/2.mp4)
+![gif](Docs/2.gif)
 
 ![1](Docs/Screenshot_1.png)
 
