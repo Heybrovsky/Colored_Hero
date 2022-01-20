@@ -1,6 +1,8 @@
 # Colored-Hero
 
-![GIF](Docs/game.gif)
+![Vid](Docs/1.mp4)
+
+![Vid](Docs/2.mp4)
 
 ![1](Docs/Screenshot_1.png)
 
