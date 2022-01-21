@@ -45,7 +45,7 @@ Color based game where Player has to change colors between red, green and blue t
     - More advanced jump
 - Simple usage of Photoshop
 - Played with implementing 2 Players 
-- Simple useage of Particle System
+- Simple usage of Particle System
 
 
 
